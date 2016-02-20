@@ -6,6 +6,10 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
+site:
+owner:
+disque-shortname: yutingzhang
+comments: true
 title: Yuting Zhang's Blog
 email: ytyt96@live.com
 description: > # this means to ignore newlines until "baseurl:"
