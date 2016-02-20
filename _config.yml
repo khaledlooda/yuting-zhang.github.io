@@ -7,10 +7,11 @@
 
 # Site settings
 site:
-owner:
-disque-shortname: yutingzhang
+    owner:
+        disque-shortname: yutingzhang
 comments: true
-title: Yuting Zhang's Blog
+
+title: Admiral's Coding Cabin
 email: ytyt96@live.com
 description: > # this means to ignore newlines until "baseurl:"
     This Blog is my personal website which documents some of my projects.
