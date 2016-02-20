@@ -16,7 +16,7 @@ from various Online Judges. I will also post some of my solutions on this websit
 Many pro competitive programmers prefer to use macros, short variable names, and many other
 practices which are only suitable in competitive environments, and post their hardly readable
 solutions online without much explanation. Although I sometimes also use such strategies in competitions,
-all solutions I post here will be formatted and documented in a much clearer way.
+all solutions I post here will be formatted and documented in a clearer way.
 
 To be honest, I am still exploring different fields of Computer Science, 
 and my plan is to further explore the fields of big data and artificial 
