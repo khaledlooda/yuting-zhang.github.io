@@ -5,7 +5,7 @@ date:   2016-03-4 00:40:00 -0600
 categories: UVa
 ---
 
-**Problem:** [Easy Longest Increasing Subsequence]
+**Problem:** [ELIS]
 
 **Solution:**
 A very easy and straightforward DP refresher.
