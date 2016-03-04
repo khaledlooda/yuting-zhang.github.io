@@ -1,0 +1,53 @@
+---
+layout: post
+title:  "UVa 10405 - Longest Common Subsequence"
+date:   2016-03-4 09:50:00 -0600
+categories: UVa
+---
+
+**Problem:** [Longest Common Subsequence]
+
+**Solution:**
+Basically, this is just a slight variation of the Levenshtein distance problem. 
+Instead of finding the minimum edit numbers, we are trying to find the longest common subsequence. 
+We then have the state transition function:
+\\[
+dp(i,j) = max
+\begin{cases}
+dp(i - 1, j) \\\
+dp(i, j - 1) \\\
+dp(i - 1, j - 1) + 1 \text{ if } string1[i] = string2[j]
+\end{cases}
+\\]
+
+**Source Code:**
+{% highlight C++ %}
+#include <iostream>
+#include <cstdio>
+#include <string>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main(){
+    string st1, st2;
+    while (getline(cin, st1)){
+        getline(cin, st2);
+        int n = st1.size();
+        int m = st2.size();
+        vector<vector<int>> dp(n + 1, vector<int>(m + 1, 0));
+        for (int i = 1; i <= n; i++)
+            for (int j = 1; j <= m; j++){
+                if (st1[i - 1] == st2[j - 1])
+                    dp[i][j] = dp[i - 1][j - 1] + 1;
+                dp[i][j] = max(dp[i][j], dp[i - 1][j]);
+                dp[i][j] = max(dp[i][j], dp[i][j - 1]);
+            }
+        cout << dp[n][m] << "\n";
+    }
+}
+
+{% endhighlight %}
+
+[Longest Common Subsequence]: https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1346
