@@ -11,7 +11,7 @@ categories: UVa
 A very easy and straightforward DP refresher.
 Given the extreme small input size, there is no need to use tail table.
 
-**Souce Code:**
+**Source Code:**
 {% highlight C++ %}
 #include <iostream>
 #include <cstdio>

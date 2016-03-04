@@ -17,7 +17,7 @@ bride. We can simply construct an directed edge between these two nodes to repre
 
 **Note:** the bride and groom can also involve in adulterous relationship!
 
-**Souce Code:**
+**Source Code:**
 {% highlight C++ %}
 #include <iostream>
 #include <cstdio>

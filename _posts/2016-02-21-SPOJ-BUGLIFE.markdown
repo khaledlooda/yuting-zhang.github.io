@@ -14,7 +14,7 @@ Simply construct the graph according to such constraints, and check for SCC.
 
 **Off-topic**: Yuri is GREAT!
 
-**Souce Code:**
+**Source Code:**
 {% highlight C++ %}
 #include <iostream>
 #include <cstdio>
