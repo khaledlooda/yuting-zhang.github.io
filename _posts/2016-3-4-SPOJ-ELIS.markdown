@@ -5,7 +5,7 @@ date:   2016-03-4 00:40:00 -0600
 categories: UVa
 ---
 
-**Problem:** [ELIS]
+**Problem:** [Easy Longest Increasing Subsequence]
 
 **Solution:**
 A very easy and straightforward DP refresher.
@@ -42,4 +42,4 @@ int main(){
 
 {% endhighlight %}
 
-[ELIS]: http://www.spoj.com/problems/ELIS
+[Easy Longest Increasing Subsequence]: http://www.spoj.com/problems/ELIS
