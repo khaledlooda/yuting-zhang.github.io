@@ -2,7 +2,7 @@
 layout: post
 title:  "SPOJ COINS - Bytelandian gold coins"
 date:   2016-03-4 18:20:00 -0600
-categories: UVa
+categories: SPOJ
 ---
 
 **Problem:** [Bytelandian gold coins]

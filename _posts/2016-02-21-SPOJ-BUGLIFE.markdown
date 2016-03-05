@@ -2,7 +2,7 @@
 layout: post
 title:  "SPOJ BUGLIFE - A Bug’s Life"
 date:   2016-02-21 17:44:00 -0600
-categories: UVa
+categories: SPOJ
 ---
 
 **Problem:** [A Bug’s Life]

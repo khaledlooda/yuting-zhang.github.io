@@ -2,7 +2,7 @@
 layout: post
 title:  "SPOJ ELIS - Easy Longest Increasing Subsequence"
 date:   2016-03-4 00:40:00 -0600
-categories: UVa
+categories: SPOJ
 ---
 
 **Problem:** [Easy Longest Increasing Subsequence]
