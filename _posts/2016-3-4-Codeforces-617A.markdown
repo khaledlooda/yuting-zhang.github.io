@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Codeforces 617A Elephant"
+title:  "Codeforces 617A - Elephant"
 date:   2016-03-4 20:00:00 -0600
 categories: Codeforces
 ---
