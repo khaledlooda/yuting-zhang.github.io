@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "TRT - Treats for the Cows"
+title:  "SPOJ TRT - Treats for the Cows"
 date:   2016-03-4 20:20:00 -0600
 categories: SPOJ
 ---
