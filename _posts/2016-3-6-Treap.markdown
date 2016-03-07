@@ -20,13 +20,13 @@ treap, which is a randomness based BBST and its implementation difficulty is not
 The name treap is a portmanteau of tree and heap. So conceivably, treap has the properties of both tree and heap.
 That is, a treap is a binary search tree, where the key of each node is greater than the one of its left child, while 
 less than the one of its right child. The heap property is achieved by giving each node a random value as its arbitrary priority, 
-and so the priority of each node is greater than the priorities of both of its children. So overall, the amortized time complexity 
+and so the priority of each node is greater than the priorities of both of its children. Overall, the amortized time complexity 
 of insert, delete and search are logarithmic, though the worst case are O(n) for all three operations.
 
 **Implementation:**
 The main operations are rotations, similar to standard BBST. However, there are not many cases in deletion. 
 Every time we try to delete some node, we only need to keep rotating until it becomes the leaf node, so its deletion becomes trivial.
-So following is my implementation of a treap, with use of Object-Oriented Programming, template and smart pointers 
+The following code is my implementation of a treap, with use of Object-Oriented Programming, template and smart pointers 
 (all of them are not necessary of course, I just used them for fun).
 
 **Note:**
@@ -59,11 +59,6 @@ public:
     void remove(const T& elem){
         remove(root, elem);
     }
-
-    void print(){
-        print(root);
-        cout << "\n";
-    }
     
 private:
     struct node_t{
@@ -71,14 +66,6 @@ private:
         shared_ptr<node_t> left, right;
         int priority;
     };
-
-    void print(shared_ptr<node_t> node){
-        if (node == nullptr)
-            return;
-        print(node->left);
-        cout << node->elem << " ";
-        print(node->right);
-    }
 
     shared_ptr<node_t> root;
 
