@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "SPOJ HERDING- Herding"
+title:  "SPOJ HERDING - Herding"
 date:   2016-03-08 20:50 -0600
 categories: SPOJ
 ---

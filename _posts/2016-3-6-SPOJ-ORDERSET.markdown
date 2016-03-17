@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "SPOJ ORDERSET- Order statistic set"
+title:  "SPOJ ORDERSET - Order statistic set"
 date:   2016-03-06 19:10 -0600
 categories: SPOJ
 ---
