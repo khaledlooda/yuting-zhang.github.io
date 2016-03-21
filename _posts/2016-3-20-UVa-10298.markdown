@@ -36,7 +36,7 @@ In this case, \\(n - \pi[n]\\) is the same as the old potential period. The reas
 \\(\pi[n] = n - period\\) because when we calculate \\(\pi[n]\\), the length of substring without match
 is exactly the length of a potential period. So this case also holds and thus completes our induction.
 
-One more thing we need to prove is that if \\(L \, \% r \neq 0\\), there is no other substring which may become the period.
+One more thing we need to prove is that if \\(L \, \% \,r \neq 0\\), there is no other substring which may become the period.
 Note that in this case, the last repetition is still incomplete after we have exhausted our string.
 Suppose our string now is in the form of \\(ABAB...ABA\\) where \\(A, B\\) are both 
 substrings of length greater or equal to 1, and thus the potential period if \\(AB\\). 
