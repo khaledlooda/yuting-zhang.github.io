@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "UVa - Power Strings"
+title:  "UVa 10298 - Power Strings"
 date:   2016-03-20 22:20 -0500
 categories: UVa
 ---
