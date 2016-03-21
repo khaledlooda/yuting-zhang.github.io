@@ -19,7 +19,33 @@ Let \\(L\\) be the length of the string, and \\(\pi\\) be the back table for suc
 \\[r = max\\{p - \pi[p] \,|\, 1 \le p \le L\\}\\]
 If \\(L \, \% \, r \neq 0\\), then \\(r = L\\).
 
-We can use the above algorithm to easily solve this problem.
+\\(\textit{Proof.}\\)
+First we inspect that \\(max\\{p - \pi[p]\\}\\) gives us the potential period of a string, 
+where the last repetition may not be complete. For example, \\(ABCABCAB\\) has a potential period of length 3, where the last 
+repetition is incomplete.
+We can prove this by induction on the length \\(L\\) of a string.
+The base case is clear, when \\(L = 1, p - \pi[p]\\) is always 1, which is indeed the period of the string.
+For induction step, we assume \\(max\\{p - \pi[p]\\}\\) gives the correct potential period for \\(p < n\\),
+so we want to prove this also holds when \\(p = n\\). There are two cases when we extend our string by one character.
+First, there is a mismatch on the nth character. In this case, \\(\pi[n]\\) will be smaller than the old potential period; otherwise,
+there would be no mismatch. And so \\(n -\pi[n]\\) would be greater than the old potential period, and become the new potential 
+period. This new potential period is correct since now our string has one complete period, and the remaining suffix being the 
+incomplete period. Note the remaining suffix must be the same as the prefix with the same length, because this is a result of 
+the definition of \\(\pi\\). The second case is that the new character matches the period.
+In this case, \\(n - \pi[n]\\) is the same as the old potential period. The reasoning is that in this case,
+\\(\pi[n] = n - period\\) because when we calculate \\(\pi[n]\\), the length of substring without match
+is exactly the length of a potential period. So this case also holds and thus completes our induction.
+
+One more thing we need to prove is that if \\(L \, \% r \neq 0\\), there is no other substring which may become the period.
+Note that in this case, the last repetition is still incomplete after we have exhausted our string.
+Suppose our string now is in the form of \\(ABAB...ABA\\) where \\(A, B\\) are both 
+substrings of length greater or equal to 1, and thus the potential period if \\(AB\\). 
+We know \\(A\\) and \\(B\\) must not equal because otherwise, our potential period would be \\(A\\) rather than \\(AB\\).
+Suppose this string has a period \\(C\\) which is not the string itself. Then we know this period must be of the form
+\\(AB...BA\\). So our string should be of the form \\(AB..BAAB..BA\\). However, in order to make this happen, we need to i
+have \\(A = B\\), which contradicts our assumption that \\(A \neq B\\). So such \\(C\\) does not exist.
+
+\\(\textit{Q.E.D.}\\)
 
 **Note:**
 Using C++ string may cause runtime error due to huge input size. Use an char buffer instead if you have run into runtime error.
