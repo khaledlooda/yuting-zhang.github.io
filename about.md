@@ -12,11 +12,8 @@ abstract, but yet also practical way.
 My current interest are mostly Algorithms, Data Structures, and various ways to model seemingly tough
 problems into solvable Mathematical models. To improve my skills, I oftentimes participate in 
  competitive programming competitions of all levels, and  practice different kinds of problems 
-from various Online Judges. I will also post some of my solutions on this website. 
-Many pro competitive programmers prefer to use macros, short variable names, and many other
-practices which are only suitable in competitive environments, and post their hardly readable
-solutions online without much explanation. Although I sometimes also use such strategies in competitions,
-all solutions I post here will be formatted and documented in a clearer way.
+from various Online Judges. I will also post some of my solutions on this website to log my progress,
+as well as to provide a guide for people who want some hint.
 
 To be honest, I am still exploring different fields of Computer Science, 
 and my plan is to further explore the fields of big data and artificial 
