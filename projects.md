@@ -3,20 +3,19 @@ layout: page
 title: Projects
 permalink: /projects/
 ---
+### Projects - Medium to Large Personal and Group Projects
 
-## Projects:
+**Easy Sign - Sign Language Learning Application:** [EasySign]
 
-**Easy Sign:** [EasySign]
+*Saphen - Safety & Crime Prevention Application:* Project Website is currently unavailable
 
-**Saphen:** [Saphen]
+### Playground - Small Personal Projects 
 
-## Playground Applications:
+*MovieViewer - Movie Information Fetcher:* [MovieViewer]
 
-**MovieViewer:** [MovieViewer]
+*Tips Calculator - Essential tool at Restaurants:* [Tips]
 
-**Tips Calculator:** [Tips]
-
-**Bell System 3.0:** [BellSystem]
+*Bell System 3.0 - Backup Bell System for School:* [BellSystem]
 
 [EasySign]:https://yuting-zhang.github.io/EasySign
 [Saphen]:https://yuting-zhang.github.io/Saphen
