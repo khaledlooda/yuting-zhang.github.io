@@ -4,13 +4,13 @@ title: Projects
 permalink: /projects/
 ---
 
-##Projects:##
+##Projects:
 
 **Easy Sign:** [EasySign]
 
 **Saphen:** [Saphen]
 
-##Playground Applications:##
+##Playground Applications:
 
 **MovieViewer:** [MovieViewer]
 
