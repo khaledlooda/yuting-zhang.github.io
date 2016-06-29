@@ -5,7 +5,7 @@ permalink: /projects/
 ---
 ### Projects - Medium to Large Personal and Group Projects
 
-**Easy Sign - Sign Language Learning Application:** [EasySign]
+*Easy Sign - Sign Language Learning Application:* [EasySign]
 
 *Saphen - Safety & Crime Prevention Application:* Project Website is currently unavailable
 
