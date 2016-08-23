@@ -17,7 +17,9 @@ greater or equal to K, then it means the current character should indeed be at t
 that character from the list.
 
 **Source Code:**
-{% highlight C++ %}
+{% highlight C++ tabsize=4 %}
+
+
 #include <iostream>
 #include <cstdio>
 #include <string>
@@ -27,55 +29,55 @@ that character from the list.
 using namespace std;
 
 int main() {
-	string word;
-	long long K;
+    string word;
+    long long K;
 
-	long long fact[20] = {1};
-	for (int i = 1; i < 20; i++)
-		fact[i] = fact[i - 1] * i;
+    long long fact[20] = {1};
+    for (int i = 1; i < 20; i++)
+        fact[i] = fact[i - 1] * i;
 
-	while (cin >> word >> K && word != "#") {
-		sort(word.begin(), word.end());
-		
-		int count[26] = {0};
-		long long skip = fact[word.size() - 1];
+    while (cin >> word >> K && word != "#") {
+        sort(word.begin(), word.end());
+        
+        int count[26] = {0};
+        long long skip = fact[word.size() - 1];
 
-		for (int i = 0; i < word.size(); i++) 
-			count[word[i] - 'A']++;
+        for (int i = 0; i < word.size(); i++) 
+            count[word[i] - 'A']++;
 
-		for (int i = 0; i < 26; i++)
-			if (count[i])
-				skip /= fact[count[i]];
+        for (int i = 0; i < 26; i++)
+            if (count[i])
+                skip /= fact[count[i]];
 
-		int digit = 0;
-		
-		string answer;
-		while (digit < word.size()) {
-			for (int i = 0; i < 26; i++)
-				if (count[i]) {
+        int digit = 0;
+        
+        string answer;
+        while (digit < word.size()) {
+            for (int i = 0; i < 26; i++)
+                if (count[i]) {
 
-					count[i]--;
+                    count[i]--;
 
-					skip = fact[word.size() - 1 - digit];
-					for (int i = 0; i < 26; i++)
-						if (count[i])
-							skip /= fact[count[i]];
+                    skip = fact[word.size() - 1 - digit];
+                    for (int i = 0; i < 26; i++)
+                        if (count[i])
+                            skip /= fact[count[i]];
 
-					if (skip < K) {
-						K -= skip;
-						count[i]++;
-					}
-					else {
-						answer += ('A' + i);
-						break;
-					}
-				}
+                    if (skip < K) {
+                        K -= skip;
+                        count[i]++;
+                    }
+                    else {
+                        answer += ('A' + i);
+                        break;
+                    }
+                }
 
-			digit++;
+            digit++;
 
-		}
-		cout << answer << "\n";
-	}
+        }
+        cout << answer << "\n";
+    }
 } 
 {% endhighlight %}
 
