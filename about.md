@@ -13,10 +13,7 @@ My current interest are mostly Algorithms, Data Structures, and various ways to 
 problems into solvable Mathematical models. To improve my skills, I oftentimes participate in 
  competitive programming competitions of all levels, and  practice different kinds of problems 
 from various Online Judges. I will also post some of my solutions on this website to log my progress,
-as well as to provide a guide for people who seek some hint.
+as well as to provide a guide for people who seek some hints.
 
-To be honest, I am still exploring different fields of Computer Science, 
-and my plan is to further explore the fields of big data and artificial 
-intelligence, as well as security in near future.
-
-
+Aside from Algorithms and Data Structures, I am also exploring Big Data, Artificial Intelligence and Computer Security. 
+This semester, I am also taking Virtual Reality at UIUC, in order to learn more about this prospering new field.
