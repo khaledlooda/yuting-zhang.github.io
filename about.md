@@ -3,6 +3,7 @@ layout: page
 title: About Me
 permalink: /about/
 ---
+<img style="float: right;" src="/assets/profile.JPG" width="250" />
 
 Ahoy visitors! I am Yuting Zhang, currently studying Computer Science at University of Illinois
 at Urbana-Champaign. Computer Science has always been a fascinating subject for me, and I really
