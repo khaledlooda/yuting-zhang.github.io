@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "OJ - PROB"
+date:   9999-1-1 00:00:00 -0600
+categories: ICPC
+---
+
+**Problem:** [PROB]
+
+**Solution:**
+
+**Source Code:**
+{% highlight C++ tabsize=4 %}
+{% endhighlight %}
+
+[PROB]: https://
