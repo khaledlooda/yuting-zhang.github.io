@@ -5,7 +5,7 @@ permalink: /projects/
 ---
 ### Projects - Medium to Large Personal and Group Projects
 
-*THE BOAT - Virtual Reality Puzzle Game:* [Game Trailer] *Project Website Will Be Post Soon*
+*THE BOAT - Virtual Reality Puzzle Game:* [Game Trailer] *Project Website Will Be Posted Soon*
 
 *Easy Sign - Sign Language Learning Application:* [EasySign]
 
