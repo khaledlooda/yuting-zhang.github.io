@@ -5,9 +5,9 @@ permalink: /projects/
 ---
 ### Projects - Medium to Large Personal and Group Projects
 
-*Easy Sign - Sign Language Learning Application:* [EasySign]
+*THE BOAT - Virtual Reality Puzzle Game:* [Trailer] *Project Website Will Be Post Soon*
 
-*Saphen - Safety & Crime Prevention Application:* Project Website is currently unavailable
+*Easy Sign - Sign Language Learning Application:* [EasySign]
 
 ### Playground - Small Personal Projects 
 
@@ -22,3 +22,4 @@ permalink: /projects/
 [MovieViewer]:https://yuting-zhang.github.io/MovieViewer
 [Tips]:https://yuting-zhang.github.io/Tips
 [BellSystem]:https://yuting-zhang.github.io/Bell-System-3.0
+[Trailer]:https://www.youtube.com/watch?v=S-Fdo_UYzQQ
