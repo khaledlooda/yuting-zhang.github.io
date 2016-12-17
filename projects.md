@@ -5,7 +5,7 @@ permalink: /projects/
 ---
 ### Projects - Medium to Large Personal and Group Projects
 
-*THE BOAT - Virtual Reality Puzzle Game:* [Game Trailer] *Project Website Will Be Posted Soon*
+*THE BOAT - Virtual Reality Puzzle Game:* [Game Trailer] [Website]
 
 *Easy Sign - Sign Language Learning Application:* [EasySign]
 
@@ -23,3 +23,4 @@ permalink: /projects/
 [Tips]:https://yuting-zhang.github.io/Tips
 [BellSystem]:https://yuting-zhang.github.io/Bell-System-3.0
 [Game Trailer]:https://www.youtube.com/watch?v=S-Fdo_UYzQQ
+[Website]:https://yuting-zhang.github.io/theBoat/
