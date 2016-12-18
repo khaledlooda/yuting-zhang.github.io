@@ -1,0 +1,58 @@
+---
+layout: post
+title:  "UVa 988 - Many Paths, One Destination"
+date:   2016-12-17 22:40:00 -0600
+categories: UVa
+---
+
+**Problem:** [Paths]
+
+**Solution:**
+Since every event can only lead to events that have larger indices, the 
+nodes are already in topological sort simply by their indices.
+
+**Source Code:**
+{% highlight C++ %}
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    int m;
+    bool first = true;
+
+    while (cin >> m) {
+        if (first)
+            first = false;
+        else
+            cout << "\n";
+
+        vector<vector<int>> adj_list(m);
+        for (int i = 0; i < m; i++) {
+            int n;
+            cin >> n;
+            for (int j = 0; j < n; j++) {
+                int next;
+                cin >> next;
+                adj_list[i].push_back(next);
+            }
+        }
+
+        vector<int> path(m, 0);
+        path[0] = 1;
+        int answer = 0;
+
+        for (int u = 0; u < m; u++) {
+            if (adj_list[u].empty())
+                answer += path[u];
+            for (int v : adj_list[u])
+                path[v] += path[u];
+        }
+        cout << answer << "\n";
+    }
+
+    return 0;
+}
+{% endhighlight %}
+
+[Paths]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=929
