@@ -1,0 +1,111 @@
+---
+layout: post
+title:  "UVa 10805 - Cockroach Escape Networks"
+date:   2016-12-21 00:00:00 -0600
+categories: UVa
+---
+
+**Problem:** [Networks]
+
+**Solution:**
+Very interesting problem. After reading the whole problem statement,
+we can find that the problem actually asks us to 
+find the Minimum Diameter Spanning Tree for the given graph.
+
+Since this problem only asks us to find the value of the diameter,
+instead of generating the real spanning tree, which is significantly harder, we
+can consider to find the center of the diameter, i.e. the point
+which exactly divides the diameter in half.
+
+To find such center is easy, we can simply apply Floyd's algorithm to find
+shortest path between every pair of nodes, and for each node \\(x\\),
+we try to find two nodes that are equally farthest away. The sum of the 
+distances would be the diameter centered at \\(x\\). We then pick the 
+smallest one among all possible diameters.
+
+However, there is a problem. If  the diameter is odd, 
+then we will not find such pair of nodes which share
+the same longest distance. A simple remedy for this, given the input data
+is extremely small, is that we can split every edge into two edges. In
+other words, we put a new node at the middle of every single edge. This
+way, we ensure that the diameter is always even, and so we can always find
+such pair of nodes which form the two ends of the diameter centered
+at \\(x\\).
+
+It seems that such splitting is necessary for this problem if we use this 
+approach. Namely, we cannot just say to find the largest distance and the 
+second largest distance and sum them over to be the diameter. That is
+definitely wrong. Consider this simple tree and try to make 0 be the center.
+{% highlight C++ %}
+0 1
+0 2
+0 3
+2 4
+2 5
+{% endhighlight %}
+Then we can see that the nodes farthest away from 0 are 4 and 5, and
+both have distance of 2. So the diameter calculated without splitting will
+be 4. However, it should be clear that the real diameter is actually 3.
+
+There are other more advanced and general ways to compute a MDST, but for
+this problem, I think the above approach should be relatively easier both to
+understand and to code.
+
+**Source Code:**
+{% highlight C++ %}
+#include <bits/stdc++.h>
+
+using namespace std;
+
+#define INF 1000000000
+
+int main() {
+    int N;
+    cin >> N;
+    for (int test_case = 0; test_case < N; test_case++) {
+        int n, m, size;
+        cin >> n >> m;
+        vector<vector<int>> adj_mat(n + m, vector<int>(n + m, INF));
+        size = n;
+
+        for (int i = 0; i < m; i++) {
+            int u, v;
+            cin >> u >> v;
+            adj_mat[u][size] = 1;
+            adj_mat[size][u] = 1;
+            adj_mat[size][v] = 1;
+            adj_mat[v][size] = 1;
+            size++;
+        }
+
+        for (int i = 0; i < size; i++)
+            adj_mat[i][i] = 0;
+
+        for (int k = 0; k < size; k++)
+            for (int i = 0; i < size; i++)
+                for (int j = 0; j < size; j++)
+                    adj_mat[i][j] = min(adj_mat[i][j], adj_mat[i][k] +
+                            adj_mat[k][j]);
+
+        int solution = INF;
+
+        for (int i = 0; i < size; i++) {
+            int first = 0, second = 0;
+            for (int j = 0; j < n; j++)
+                if (adj_mat[i][j] >= first) {
+                    second = first;
+                    first = adj_mat[i][j];
+                }
+                else if (adj_mat[i][j] > second)
+                    second = adj_mat[i][j];
+           solution = min(solution, first + second); 
+        }
+        cout << "Case #" << test_case + 1 << ":\n";
+        cout << solution / 2 <<"\n\n";
+
+    }
+    return 0;
+}
+{% endhighlight %}
+
+[Networks]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=1746
