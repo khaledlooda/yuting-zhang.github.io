@@ -12,8 +12,9 @@ Since every road has two lanes, this directed graph has an Euler tour.
 This means the plow will travel each lane exactly once.
 
 **Hints:** 
-- Minutes should always have two digits.
-- What would happen if minutes round up to 60?
+
+* Minutes should always have two digits.
+* What would happen if minutes round up to 60?
 
 **Source Code:**
 {% highlight C++ %}
