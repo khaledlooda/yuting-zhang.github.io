@@ -12,6 +12,7 @@ Just check whether the graph has an Euler tour or not.
 
 The problem description is very vague, and here are some of the assumptions
 my AC code is using:
+
 * Home is any node which has degree greater than 0.
 * If there is no edge, such walk is impossible.
 * You do not need to visit every intersection.
