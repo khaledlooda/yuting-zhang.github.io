@@ -1,0 +1,35 @@
+---
+layout: post
+title:  "UVa 11723 - Numbering Roads"
+date:   2016-12-24 14:30:00 -0600
+categories: UVa
+---
+
+**Problem:** [Numbering Roads]
+
+**Solution:**
+Confidence booster.
+
+**Source Code:**
+{% highlight C++ %}
+{% raw %}
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    int N, R, T = 0;
+    while (scanf("%d %d", &R, &N) && N) {
+        printf("Case %d: ", ++T);
+        if (26 * N + N < R)
+            printf("impossible\n");
+        else 
+            printf("%d\n", R % N == 0 ? R / N - 1 : R / N);
+    }
+
+    return 0; 
+}
+{% endraw %}
+{% endhighlight %}
+
+[Numbering Roads]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&category=24&problem=2823

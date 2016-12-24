@@ -1,0 +1,40 @@
+---
+layout: post
+title:  "UVa 11875 - Brick Game" 
+date:   2016-12-24 14:45:00 -0600
+categories: UVa
+---
+
+**Problem:** [Brick Game]
+
+**Solution:**
+Confidence Booster.
+
+**Source Code:**
+{% highlight C++ %}
+{% raw %}
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    int T;
+    scanf("%d", &T);
+    for (int cases = 0; cases < T; cases++) {
+        int N;
+        scanf("%d", &N);
+        int captain = 0;
+        for (int i = 0; i < N; i++) {
+            int age;
+            scanf("%d", &age);
+            if (i == N / 2)
+                captain = age;
+        }
+        printf("Case %d: %d\n", cases + 1, captain); 
+    }
+    return 0;
+}
+{% endraw %}
+{% endhighlight %}
+
+[Brick Game]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=2986
