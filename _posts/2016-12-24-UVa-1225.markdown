@@ -1,0 +1,47 @@
+---
+layout: post
+title:  "UVa 1225 - Digit Counting" 
+date:   2016-12-24 15:15:00 -0600
+categories: UVa
+---
+
+**Problem:** [Digit Counting]
+
+**Solution:**
+Confidence Booster.
+
+**Source Code:**
+{% highlight C++ %}
+{% raw %}
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    int T;
+    scanf("%d", &T);
+    while (T--) {
+        int N;
+        scanf("%d", &N);
+        
+        int counter[10] = {0};
+        for (int i = 1; i <= N; i++) {
+            int temp = i;
+            while (temp) {
+                int digit = temp % 10;
+                temp /= 10;
+                counter[digit]++;
+            }
+        }
+
+        cout << counter[0];
+        for (int i = 1; i < 10; i++)
+            cout << " " << counter[i];
+        cout << "\n";
+    }
+    return 0;
+}
+{% endraw %}
+{% endhighlight %}
+
+[Digit Counting]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=3666
