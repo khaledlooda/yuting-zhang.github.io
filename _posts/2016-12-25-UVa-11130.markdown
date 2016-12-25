@@ -1,0 +1,62 @@
+---
+layout: post
+title:  "UVa 11130 - Billiard bounces"
+date:   2016-12-25 13:15:00 -0600
+categories: UVa
+---
+
+**Problem:** [Billiard bounces]
+
+**Solution:**
+At first I tried to solve this problem via direct simulation, but was
+stuck in some weird errors due to floating point precision. So I
+changed my way to approach this problem. 
+
+If we use direct simulation, when a bounce happens, we flip the sign
+of the velocity component which is perpendicular to the bounce surface,
+and make no change to the component which is parallel to the bounce surface.
+Instead of doing this, we can add a new billiard board beyond the
+bounce surface. By doing this, the ball leaves the original board and
+enters the new board, so we do not  need to change the velocity. 
+This effectively reflects, or mirrors the board over the bounce surface,
+hence having no influence on the number of bounces. 
+
+By doing this, the ball travels in a straight line, and we do not even need
+to calculate the time when bounces do happen. 
+All we need to do is to calculate
+the total distance the ball travels, and find how many vertical and 
+horizontal walls the ball has passed through.
+
+
+**Source Code:**
+{% highlight C++ %}
+{% raw %}
+#include <bits/stdc++.h>
+
+using namespace std;
+
+#define PI acos(-1)
+
+int main() {
+    double a, b, v, A, s;
+    while (scanf("%lf %lf %lf %lf %lf", &a, &b, &v, &A, &s) && a > 0) {
+        double x = a / 2, y = b / 2;
+        double vx = v * cos(A * PI / 180), vy = v * sin(A * PI / 180);
+        double ax = -v / s * cos(A * PI / 180), ay = -v / s * sin(A * PI / 180);
+
+        int vw = 0, hw = 0;
+
+        double dx = vx * s + 0.5 * ax * s * s;
+        double dy = vy * s + 0.5 * ay * s * s;
+
+        vw = (dx + a / 2) / a;
+        hw = (dy + b / 2) / b;
+
+        printf("%d %d\n", vw, hw);
+    }
+    return 0;
+}
+{% endraw %}
+{% endhighlight %}
+
+[Billiard bounces]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=2071
