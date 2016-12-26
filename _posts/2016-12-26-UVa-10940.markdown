@@ -1,0 +1,44 @@
+---
+layout: post
+title:  "UVa 10940 - Throwing cards away II"
+date:   2016-12-26 15:10:00 -0600
+categories: UVa
+---
+
+**Problem:** [Throwing cards away II]
+
+**Solution:**
+By doing simulation, we can easily find the pattern: 
+\\(1, 2, 2, 4, 2, 4, 6, 8, 2, 4, 6, 8, 10, 12, 14, 16, \dots \\)
+
+**Source Code:**
+{% highlight C++ %}
+{% raw %}
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    int n;
+    vector<int> solution(500000);
+    solution[0] = 1;
+    int exponent = 0;
+    int number = 2;
+    for (int i = 1; i < 500000; i++) {
+        if (number > (1 << exponent)) {
+            exponent++;
+            number = 2;
+        }
+        solution[i] = number;
+        number += 2;
+    }
+
+    while (scanf("%d", &n) && n)
+        printf("%d\n", solution[n - 1]);
+
+    return 0;
+}
+{% endraw %}
+{% endhighlight %}
+
+[Throwing cards away II]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=1881
