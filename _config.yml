@@ -11,6 +11,10 @@ site:
         disque-shortname: yutingzhang
 comments: true
 
+gems: [jekyll-paginate]
+paginate: 20
+paginate_path: "/page:num/"
+
 title: Yuting's Coding Sanctuary
 email: yutingzhang@acm.org
 description: > # this means to ignore newlines until "baseurl:"
@@ -18,9 +22,10 @@ description: > # this means to ignore newlines until "baseurl:"
     I will also post solutions to some problems here as well.
     Website construction still in progress. 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+url: "" # the base hostname & protocol for your site
 twitter_username: 
 github_username:  yuting-zhang
 
 # Build settings
 markdown: kramdown
+
