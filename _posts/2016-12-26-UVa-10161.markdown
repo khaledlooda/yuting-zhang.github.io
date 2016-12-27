@@ -1,0 +1,47 @@
+---
+layout: post
+title:  "UVa 10161 - Ant on a Chessboard"
+date:   2016-12-26 17:00:00 -0600
+categories: UVa
+---
+
+**Problem:** [Ant on a Chessboard]
+
+**Solution:**
+Easy Math.
+
+**Source Code:**
+{% highlight C++ %}
+{% raw %}
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    int N;
+    while (scanf("%d", &N) && N) {
+        int layer = sqrt(N);
+        if (layer * layer < N)
+            layer++;
+
+        int remain = N - (layer - 1) * (layer - 1);
+
+        if (layer % 2 == 0) {
+            if (remain < layer) 
+                printf("%d %d\n", remain, layer);
+            else 
+                printf("%d %d\n", layer, layer - (remain - layer));
+        }
+        else {
+            if (remain < layer) 
+                printf("%d %d\n", layer, remain);
+            else 
+                printf("%d %d\n", layer - (remain - layer), layer);
+        }
+    }
+    return 0;
+}
+{% endraw %}
+{% endhighlight %}
+
+[Ant on a Chessboard]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=1102
