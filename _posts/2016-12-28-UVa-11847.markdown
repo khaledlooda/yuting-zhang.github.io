@@ -1,0 +1,31 @@
+---
+layout: post
+title:  "UVa 11847 - Cut the Silver Bar"
+date:   2016-12-28 21:50:00 -0600
+categories: UVa
+---
+
+**Problem:** [Cut the Silver Bar]
+
+**Solution:**
+Best solution would be cutting bars of size \\(1, 2, 4, 8, \dots \\). So only
+\\(\lfloor \log(2) \rfloor\\) cuts are required.
+
+
+**Source Code:**
+{% highlight C++ %}
+{% raw %}
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    int n;
+    while (scanf("%d", &n) && n)
+        printf("%d\n", (int)(log(n) / log(2)));
+    return 0;
+}
+{% endraw %}
+{% endhighlight %}
+
+[Cut the Silver Bar]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=2947
