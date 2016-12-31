@@ -1,0 +1,39 @@
+---
+layout: post
+title:  "UVa 10931 - Parity"
+
+date:   2016-12-31 16:00:00 -0600
+categories: UVa
+---
+
+**Problem:** [Parity]
+
+**Solution:**
+Easy modulo problem.
+
+**Source Code:**
+{% highlight C++ %}
+{% raw %}
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    int I;
+    while (scanf("%d", &I) && I) {
+        int parity = 0;
+        string binary;
+        while (I) {
+            parity += I % 2;
+            binary = (I % 2 ? '1' : '0') + binary;
+            I >>= 1;
+        }
+
+        printf("The parity of %s is %d (mod 2).\n", binary.c_str(), parity);
+    }
+    return 0;
+}
+{% endraw %}
+{% endhighlight %}
+
+[Parity]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=1872
