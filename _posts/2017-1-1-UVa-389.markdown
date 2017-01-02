@@ -1,0 +1,38 @@
+---
+layout: post
+title:  "UVa 389 - Basically Speaking"
+
+date:   2017-1-1 17:00:00 -0600
+categories: UVa
+---
+
+**Problem:** [Basically Speaking]
+
+**Solution:**
+Use BigInteger in Java can make things easier, though significantly slower.
+
+**Source Code:**
+{% highlight Java %}
+{% raw %}
+import java.util.Scanner;
+import java.math.BigInteger;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        while (sc.hasNext()) {
+            String number = sc.next();
+            int fromBase = sc.nextInt();
+            int toBase = sc.nextInt();
+            number = new BigInteger(number, fromBase).toString(toBase);
+            number = number.toUpperCase();
+            if (number.length() > 7)
+                number = "ERROR";
+            System.out.printf("%7s\n", number);
+        }
+    }
+}
+{% endraw %}
+{% endhighlight %}
+
+[Basically Speaking]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=325

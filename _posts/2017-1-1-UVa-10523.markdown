@@ -1,0 +1,39 @@
+---
+layout: post
+title:  "UVa 10523 - Very Easy !!!"
+
+date:   2017-1-1 11:50:00 -0600
+categories: UVa
+---
+
+**Problem:** [Very Easy !!!]
+
+**Solution:**
+Use BigInteger in Java can make things easier, though efficiency
+is not as good as the result of using C/C++.
+
+**Source Code:**
+{% highlight Java %}
+{% raw %}
+import java.util.Scanner;
+import java.math.BigInteger;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        while (sc.hasNext()) {
+            int N = sc.nextInt();
+            BigInteger A = sc.nextBigInteger();
+
+            BigInteger sum = BigInteger.ZERO;
+            for (int i = 1; i <= N; i++) {
+                sum = sum.add(A.pow(i).multiply(BigInteger.valueOf(i)));
+            }
+            System.out.println(sum.toString());
+        }
+    }
+}
+{% endraw %}
+{% endhighlight %}
+
+[Very Easy !!!]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=1464

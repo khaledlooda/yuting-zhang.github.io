@@ -1,0 +1,39 @@
+---
+layout: post
+title:  "UVa 11287 - Pseudoprime Numbers"
+
+date:   2017-1-1 20:10:00 -0600
+categories: UVa
+---
+
+**Problem:** [Pseudoprime Numbers]
+
+**Solution:**
+Use BigInteger in Java can make things easier.
+
+**Source Code:**
+{% highlight Java %}
+{% raw %}
+import java.util.Scanner;
+import java.math.BigInteger;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            BigInteger p = sc.nextBigInteger();
+            BigInteger a = sc.nextBigInteger();
+            if (p.compareTo(BigInteger.ZERO) == 0)
+                break;
+
+            if (!p.isProbablePrime(10) && a.modPow(p, p).compareTo(a) == 0)
+                System.out.println("yes");
+            else
+                System.out.println("no");
+        }
+    }
+}
+{% endraw %}
+{% endhighlight %}
+
+[Pseudoprime Numbers]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=2262

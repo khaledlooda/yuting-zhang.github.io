@@ -1,0 +1,41 @@
+---
+layout: post
+title:  "UVa 11879 - Multiple of 17"
+
+date:   2017-1-1 13:20:00 -0600
+categories: UVa
+---
+
+**Problem:** [Multiple of 17]
+
+**Solution:**
+Use BigInteger in Java can make things easier.
+
+**Source Code:**
+{% highlight Java %}
+{% raw %}
+import java.util.Scanner;
+import java.math.BigInteger;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        BigInteger n;
+        while (true) {
+            n = sc.nextBigInteger();
+            if (n.compareTo(BigInteger.ZERO) == 0)
+                break;
+            int lastDigit = n.remainder(BigInteger.valueOf(10)).intValue();
+            n = n.divide(BigInteger.valueOf(10));
+            n = n.subtract(BigInteger.valueOf(lastDigit * 5));
+            if (n.remainder(BigInteger.valueOf(17)).intValue() == 0)
+                System.out.println(1);
+            else
+                System.out.println(0);
+        }
+    }
+}
+{% endraw %}
+{% endhighlight %}
+
+[Multiple of 17]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=3001

@@ -1,0 +1,43 @@
+---
+layout: post
+title:  "UVa 713 - Adding Reversed Numbers"
+
+date:   2017-1-1 11:10:00 -0600
+categories: UVa
+---
+
+**Problem:** [Adding Reversed Numbers]
+
+**Solution:**
+Use BigInteger in Java can make things easier.
+
+**Source Code:**
+{% highlight Java %}
+{% raw %}
+import java.util.Scanner;
+import java.math.BigInteger;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        for (int cases = 0; cases < N; cases++) {
+            StringBuilder builder = new StringBuilder(sc.next());
+            BigInteger num1 = new BigInteger(builder.reverse().toString());
+
+            builder = new StringBuilder(sc.next());
+            BigInteger num2 = new BigInteger(builder.reverse().toString());
+
+            builder = new StringBuilder(num1.add(num2).toString());
+            builder = builder.reverse();
+
+            while (builder.charAt(0) == '0' && builder.length() > 1)
+                builder.deleteCharAt(0);
+            System.out.println(builder.toString());
+        }
+    }
+}
+{% endraw %}
+{% endhighlight %}
+
+[Adding Reversed Numbers]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=654
