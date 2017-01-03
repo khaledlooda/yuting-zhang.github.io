@@ -1,0 +1,39 @@
+---
+layout: post
+title:  "UVa 11821 - High-Precision Number"
+
+date:   2017-1-2 19:40:00 -0600
+categories: UVa
+---
+
+**Problem:** [High-Precision Number]
+
+**Solution:**
+Use BigDecimal in Java can make things easier.
+
+**Source Code:**
+{% highlight Java %}
+{% raw %}
+import java.util.Scanner;
+import java.math.BigDecimal;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for (int cases = 0; cases < n; cases++) {
+            BigDecimal sum = BigDecimal.ZERO;
+            while (true) {
+                BigDecimal num = sc.nextBigDecimal();
+                if (num.compareTo(BigDecimal.ZERO) == 0)
+                    break;
+                sum = sum.add(num);
+            }
+            System.out.println(sum.stripTrailingZeros().toPlainString());
+        }
+    }
+}
+{% endraw %}
+{% endhighlight %}
+
+[High-Precision Number]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=2921
