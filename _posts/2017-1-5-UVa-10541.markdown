@@ -1,0 +1,60 @@
+---
+layout: post
+title:  "UVa 10541 - Stripe"
+
+date:   2017-1-5 13:30:00 -0600
+categories: UVa
+---
+
+**Problem:** [Stripe]
+
+**Solution:**
+Let the number of white squares be \\(N\\), number of consequent black 
+squares be \\(K\\). Then this problem can be modeled as inserting
+\\(K\\) black blocks into \\(N\\) consecutive white squares, where
+we can insert at both the head and end of the white stripe, and that no
+two black blocks can be inserted at the same place. This is
+effectively \\(\binom{N + 1}{K}\\).
+
+**Source Code:**
+{% highlight Java %}
+{% raw %}
+import java.util.Scanner;
+import java.math.BigInteger;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+
+        for (int cases = 0; cases < T; cases++) {
+            int N = sc.nextInt();
+            int K = sc.nextInt();
+            for (int i = 0; i < K; i++) {
+                int num = sc.nextInt();
+                N -= num;
+            }
+
+            if (N < K - 1) {
+                System.out.println("0");
+                continue;
+            }
+                
+            N++;
+
+            if (K > (N - K))
+                K = N - K;
+
+            BigInteger result = BigInteger.ONE;
+            for (int i = N; i > N - K; i--)
+                result = result.multiply(BigInteger.valueOf(i));
+            for (int i = K; i > 1; i--)
+                result = result.divide(BigInteger.valueOf(i));
+            System.out.println(result);
+        }
+    }
+}
+{% endraw %}
+{% endhighlight %}
+
+[Stripe]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=1482

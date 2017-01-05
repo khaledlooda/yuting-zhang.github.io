@@ -1,0 +1,45 @@
+---
+layout: post
+title:  "UVa 10334 - Ray Through Glasses"
+
+date:   2017-1-3 11:20:00 -0600
+categories: UVa
+---
+
+**Problem:** [Ray Through Glasses]
+
+**Solution:**
+The solution turns out to be the Fibonacci sequence. This result is intuitive,
+since for \\(a_n\\), the possible situations will be
+
+* All the rays in \\(a_{n-1}\\) bounce off the bottom/top surface, plus
+* All the rays in \\(a_{n-2}\\) bounce off the top/bottom surface, and
+    then bounce off the middle surface.
+
+The result can be really big, so use Java BigInteger can be helpful.
+
+**Source Code:**
+{% highlight Java %}
+{% raw %}
+import java.util.Scanner;
+import java.math.BigInteger;
+
+class Main {
+    public static void main(String[] args) {
+        BigInteger[] fibs = new BigInteger[1005];
+        fibs[0] = BigInteger.valueOf(1);
+        fibs[1] = BigInteger.valueOf(2);
+        for (int i = 2; i < 1005; i++)
+            fibs[i] = fibs[i - 2].add(fibs[i - 1]);
+
+        Scanner sc = new Scanner(System.in);
+        while (sc.hasNext()) {
+            int n = sc.nextInt();
+            System.out.println(fibs[n]);
+        }
+    }
+}
+{% endraw %}
+{% endhighlight %}
+
+[Ray Through Glasses]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=1275
