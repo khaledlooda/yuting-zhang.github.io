@@ -1,0 +1,41 @@
+---
+layout: post
+title:  "UVa 10007 - Count the Trees"
+
+date:   2017-1-5 20:00:00 -0600
+categories: UVa
+---
+
+**Problem:** [Count the Trees]
+
+**Solution:**
+Using Catalan Number, we have the solution for \\(n\\) to be
+\\(Cat(n) \times n!\\)
+
+**Source Code:**
+{% highlight Java %}
+{% raw %}
+import java.util.Scanner;
+import java.math.BigInteger;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        while (sc.hasNext()) {
+            int n = sc.nextInt();
+            if (n == 0)
+                break;
+            BigInteger result = BigInteger.ONE;
+
+            for (int i = 2 * n; i > n; i--)
+                result = result.multiply(BigInteger.valueOf(i));
+            result = result.divide(BigInteger.valueOf(n + 1));
+            System.out.println(result);
+        }
+    }
+}
+{% endraw %}
+{% endhighlight %}
+
+[Count the Trees]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=948

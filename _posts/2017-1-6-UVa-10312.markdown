@@ -1,0 +1,50 @@
+---
+layout: post
+title:  "UVa 10312 - Expression Bracketing"
+
+date:   2017-1-6 14:00:00 -0600
+categories: UVa
+---
+
+**Problem:** [Expression Bracketing]
+
+**Solution:**
+Binary bracketing can be computed by Catalan numbers, and the 
+total number of bracketing can be computed by 
+Schröder-Hipparchus numbers.
+
+**Source Code:**
+{% highlight Java %}
+{% raw %}
+import java.util.Scanner;
+import java.math.BigInteger;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        BigInteger[] Cat = new BigInteger[30];
+        BigInteger[] S = new BigInteger[30];
+
+        Cat[0] = BigInteger.valueOf(1);
+        for (int i = 0; i < 29; i++) 
+            Cat[i + 1] = BigInteger.valueOf((2 * i + 2) * (2 * i + 1)).multiply
+                (Cat[i]).divide(BigInteger.valueOf(i + 2)).divide
+                (BigInteger.valueOf(i + 1));
+
+        S[1] = BigInteger.valueOf(1);
+        S[2] = BigInteger.valueOf(1);
+        for (int i = 3; i < 30; i++)
+            S[i] = (S[i - 1].multiply(BigInteger.valueOf(6 * i - 9)).subtract 
+                 (S[i - 2].multiply(BigInteger.valueOf(i - 3))).divide
+                 (BigInteger.valueOf(i)));
+
+        while (sc.hasNext()) {
+            int n = sc.nextInt();
+            System.out.println(S[n].subtract(Cat[n - 1]));
+        }
+    }
+}
+{% endraw %}
+{% endhighlight %}
+
+[Expression Bracketing]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=1253
