@@ -1,0 +1,30 @@
+---
+layout: post
+title:  "UVa 11597 - Spanning Subtree"
+
+date:   2017-1-7 16:30:00 -0600
+categories: UVa
+---
+
+**Problem:** [Spanning Subtree]
+
+**Solution:**
+The solution is simply \\(\frac{n}{2}\\).
+
+**Source Code:**
+{% highlight C++ %}
+{% raw %}
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    int n, cases = 0;
+    while (scanf("%d", &n) && n) 
+        printf("Case %d: %d\n", ++cases, n / 2);
+    return 0;
+}
+{% endraw %}
+{% endhighlight %}
+
+[Spanning Subtree]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=2644
