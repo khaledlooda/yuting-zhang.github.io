@@ -1,0 +1,59 @@
+---
+layout: post
+title:  "UVa 10892 - LCM Cardinality"
+
+date:   2017-1-9 11:10:00 -0600
+categories: UVa
+---
+
+**Problem:** [LCM Cardinality]
+
+**Solution:**
+First we find all the factors of \\(N\\). Then try every pair
+of the factors to see whether their LCM is \\(N\\) or not.
+
+**Source Code:**
+{% highlight C++ %}
+{% raw %}
+#include <bits/stdc++.h>
+
+using namespace std;
+
+long long gcd(long long a, long long b) {
+    return b == 0 ? a : gcd(b, a % b);
+}
+
+long long lcm(long long a, long long b) {
+    return a / gcd(a, b) * b;
+}
+
+int main() {
+    long long N;
+    while (scanf("%lld", &N) && N) {
+        vector<long long> factors;
+        for (int i = 1; i < sqrt(N); i++) {
+            if (N % i == 0) {
+                factors.push_back(i);
+                factors.push_back(N / i);
+            }
+        }
+        if (pow((int)sqrt(N), 2) == N)
+            factors.push_back(sqrt(N));
+
+        sort(factors.begin(), factors.end());
+
+        int cardinality = 0;
+        for (int i = 0; i < factors.size(); i++)
+            for (int j = i; j < factors.size(); j++)
+                if (lcm(factors[j], factors[i]) == N)
+                    cardinality++;
+
+        printf("%lld %d\n", N, cardinality);
+    }
+
+    return 0;
+}
+{% endraw %}
+{% endhighlight %}
+
+[LCM Cardinality]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=1833

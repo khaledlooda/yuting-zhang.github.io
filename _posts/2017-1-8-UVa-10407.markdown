@@ -1,0 +1,57 @@
+---
+layout: post
+title:  "UVa 10407 - Simple division"
+
+date:   2017-1-8 22:10:00 -0600
+categories: UVa
+---
+
+**Problem:** [Simple division]
+
+**Solution:**
+Let \\(a_1, a_2, \dots, a_n\\) be the set of numbers, \\(d\\) be the
+dividend we seek, and \\(r\\) be the remainder. 
+
+Then \\(a_1 = k_1d + r, a_2 = k_2d + r, \dots, a_n = k_nd + r. \\)
+
+So \\((a_2 - a_1) = (k_2 - k_1)d, \dots , (a_n - a_1) = (k_n - k_1)d\\).
+
+To find \\(d\\), it is equivalent to find the GCD of 
+\\(a_2 - a_1, \dots, a_n - a_1\\).
+
+**Source Code:**
+{% highlight C++ %}
+{% raw %}
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int gcd(int a, int b) {
+    return b == 0 ? a : gcd(b, a % b);
+}
+
+int main() {
+    int num;
+    while (scanf("%d", &num) && num) {
+        vector<int> s;
+        s.push_back(num);
+        while (scanf("%d", &num) && num)
+            s.push_back(num);
+        for (int i = 1; i < s.size(); i++)
+            s[i] -= s[0];
+        int answer = abs(s[1]);
+        for (int i = 1; i < s.size() - 1; i++) {
+            if (answer > s[i + 1])
+                answer = gcd(answer, abs(s[i + 1]));
+            else
+                answer = gcd(abs(s[i + 1]), answer);
+        }
+        
+        printf("%d\n", answer);
+    }
+    return 0;
+}
+{% endraw %}
+{% endhighlight %}
+
+[Simple division]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=1348
