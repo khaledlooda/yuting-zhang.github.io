@@ -1,0 +1,44 @@
+---
+layout: post
+title:  "UVa 10338 - Mischievous Children"
+
+date:   2017-1-10 11:45:00 -0600
+categories: UVa
+---
+
+**Problem:** [Mischievous Children]
+
+**Solution:**
+Counting problem.
+
+**Source Code:**
+{% highlight C++ %}
+{% raw %}
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    long long factorial[21] = {1};
+    for (int i = 1; i < 21; i++)
+        factorial[i] = factorial[i - 1] * i;
+
+    int n;
+    cin >> n;
+    for (int cases = 0; cases < n; cases++) {
+        string line;
+        cin >> line;
+        char letter[26] = {0};
+        for (char ch : line)
+            letter[ch - 'A']++;
+        long long solution = factorial[line.size()];
+        for (int i = 0; i < 26; i++)
+            solution /= factorial[letter[i]];
+        printf("Data set %d: %lld\n", cases + 1, solution);
+    }
+    return 0;
+}
+{% endraw %}
+{% endhighlight %}
+
+[Mischievous Children]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=1279

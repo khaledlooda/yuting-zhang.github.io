@@ -1,0 +1,42 @@
+---
+layout: post
+title:  "UVa 623 - 500!"
+
+date:   2017-1-9 20:10:00 -0600
+categories: UVa
+---
+
+**Problem:** [500!]
+
+**Solution:**
+Trivial with Java BigInteger.
+
+**Source Code:**
+{% highlight Java %}
+{% raw %}
+import java.util.Scanner;
+import java.math.BigInteger;
+
+class Main {
+    public static void main(String[] args) {
+        String[] factorial = new String[1001];
+        factorial[0] = "1";
+        BigInteger fact = BigInteger.ONE;
+
+        for (int i = 1; i <= 1000; i++) {
+            fact = fact.multiply(BigInteger.valueOf(i));
+            factorial[i] = fact.toString();
+        }
+
+        Scanner sc = new Scanner(System.in);
+        while (sc.hasNext()) {
+            int n = sc.nextInt();
+            System.out.println(n + "!");
+            System.out.println(factorial[n]);
+        }
+    }
+}
+{% endraw %}
+{% endhighlight %}
+
+[500!]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=564
