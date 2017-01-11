@@ -1,0 +1,77 @@
+---
+layout: post
+title:  "UVa 11728 - Alternate Task"
+
+date:   2017-1-11 16:40:00 -0600
+categories: UVa
+---
+
+**Problem:** [Alternate Task]
+
+**Solution:**
+For a positive integer \\(N\\), we can factor it into
+\\(N = 2^i \times 3^j \times 5^k \times \dots\\). So the sum of all 
+divisors will be
+\\(\sum_{a = 0}^i2^a\sum_{b = 0}^j3^b\sum_{c = 0}^k5^c\dots = 
+(\frac{2^{i + 1} - 1}{2 - 1})(\frac{3^{j + 1} - 1}{3 - 1})
+(\frac{5^{k + 1} - 1}{5 - 1})\dots\\).
+
+**Source Code:**
+{% highlight C++ %}
+{% raw %}
+#include <bits/stdc++.h>
+
+using namespace std;
+
+#define UPPERBOUND 1050
+
+vector<int> primes;
+
+void sieve() {
+    bitset<UPPERBOUND> bs;
+    bs.set();
+    bs[0] = bs[1] = false;
+
+    for (long long i = 2; i < UPPERBOUND; i++)
+        if (bs[i]) {
+            for (long long j = i * i; j < UPPERBOUND; j += i)
+                bs[j] = false;
+            primes.push_back(static_cast<int>(i));
+        }
+}
+
+long long sum_of_divisors(int N) {
+    int index = 0, factor = primes[index];
+    long long sum = 1;
+    while (factor * factor <= N) {
+        int power = 0;
+        while (N % factor == 0) {
+            N /= factor;
+            power++;
+        }
+        sum *= (pow(factor, power + 1) - 1) / (factor - 1);
+        factor = primes[++index];
+    }
+    if (N != 1)
+        sum *= (pow(N, 2) - 1) / (N - 1);
+    return sum;
+}
+
+int main(){
+    sieve();
+    vector<int> solution(1001, -1);
+    for (int num = 1; num <= 1000; num++) {
+        long long sum = sum_of_divisors(num);
+        if (sum <= 1000)
+            solution[sum] = num;
+    }
+
+    int S, cases = 0;
+    while (scanf("%d", &S) && S)
+        printf("Case %d: %d\n", ++cases, solution[S]);
+	return 0;
+}
+{% endraw %}
+{% endhighlight %}
+
+[Alternate Task]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=2828
