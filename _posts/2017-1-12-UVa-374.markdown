@@ -1,0 +1,41 @@
+---
+layout: post
+title:  "UVa 374 - Big Mod"
+
+date:   2017-1-12 19:30:00 -0600
+categories: UVa
+---
+
+**Problem:** [Big Mod]
+
+**Solution:**
+Basic power mod implementation.
+
+**Source Code:**
+{% highlight C++ %}
+{% raw %}
+#include <bits/stdc++.h>
+
+using namespace std;
+
+long long big_mod(long long B, long long P, long long M) {
+    if (P == 0)
+        return 1;
+    long long result = big_mod(B, P / 2, M);
+    if (P % 2 == 0) 
+        return result * result % M;
+    else 
+        return (result * result % M) * B % M;
+}
+
+int main(){
+    long long B, P, M;
+    while (scanf("%lld %lld %lld", &B, &P, &M) == 3) {
+        printf("%lld\n", big_mod(B, P, M));
+    }
+	return 0;
+}
+{% endraw %}
+{% endhighlight %}
+
+[Big Mod]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=310
