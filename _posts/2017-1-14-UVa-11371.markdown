@@ -1,0 +1,52 @@
+---
+layout: post
+title:  "UVa 11371 - Number Theory for Newbies"
+
+date:   2017-1-14 13:20:00 -0600
+categories: UVa
+---
+
+**Problem:** [Number Theory for Newbies]
+
+**Solution:**
+Count occurrences for each digit, and construct numbers from there.
+
+**Source Code:**
+{% highlight C++ %}
+{% raw %}
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    long long n;
+    while (scanf("%lld", &n) == 1) {
+        int low = 9;
+        int digits[10] = {0};
+        long long temp = n;
+        while (temp) {
+            int digit = temp % 10;
+            if (digit)
+                low = min(low, digit);
+            digits[digit]++;
+            temp /= 10;
+        }
+
+        long long big = 0;
+        for (int i = 9; i >= 0; i--)
+            for (int j = 0; j < digits[i]; j++)
+                big = big * 10 + i;
+        long long small = low;
+        digits[low]--;
+        for (int i = 0; i <= 9; i++)
+            for (int j = 0; j < digits[i]; j++)
+                small = small * 10 + i;
+        printf("%lld - %lld = %lld = 9 * %lld\n", big, small, big - small,
+                (big - small) / 9);
+    }
+    return 0;
+}
+{% endraw %}
+{% endhighlight %}
+
+[Number Theory for Newbies]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=2366
