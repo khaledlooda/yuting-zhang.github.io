@@ -1,0 +1,49 @@
+---
+layout: post
+title:  "UVa 11053 - Flavius Josephus Reloaded"
+
+date:   2017-1-15 22:30:00 -0600
+categories: UVa
+---
+
+**Problem:** [Flavius Josephus Reloaded]
+
+**Solution:**
+Cycle-Finding. People in the cycle will commit suicide.
+
+**Source Code:**
+{% highlight C++ %}
+{% raw %}
+#include <bits/stdc++.h>
+
+using namespace std;
+
+long long a, b, N;
+
+long long next(long long x) {
+    return (a * x % N * x % N + b) % N;
+}
+
+int main(){
+    while (scanf("%lld %lld %lld", &N, &a, &b) == 3) {
+        long long slow = next(0), fast = next(next(0));
+
+        while (slow != fast) {
+            slow = next(slow);
+            fast = next(next(fast));
+        }
+
+        int lambda = 1;
+        slow = next(slow);
+        while (slow != fast) {
+            slow = next(slow);
+            lambda++;
+        }
+        printf("%d\n", (int)N - lambda);
+    }
+    return 0;
+}
+{% endraw %}
+{% endhighlight %}
+
+[Flavius Josephus Reloaded]:https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=1994
