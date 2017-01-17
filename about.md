@@ -6,7 +6,7 @@ permalink: /about/
 <img style="float: right;" src="/assets/profile.JPG" width="250" />
 
 *Software Engineer Intern at Facebook*  
-*ICPC 2017 World Finalist*
+*ACM-ICPC 2017 World Finalist*
 
 Ahoy visitors! I am Yuting Zhang, currently studying Computer Science at 
 University of Illinois at Urbana-Champaign. 
