@@ -19,8 +19,8 @@ title: Yuting's Coding Sanctuary
 email: yutingzhang@acm.org
 description: > # this means to ignore newlines until "baseurl:"
     This Blog is my personal website which documents some of my projects.
-    I will also post solutions to some problems here as well.
-    Website construction still in progress. 
+    I also post solutions to some competitive programming
+    problems here as well.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 twitter_username: 
