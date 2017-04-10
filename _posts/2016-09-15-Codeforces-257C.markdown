@@ -2,7 +2,7 @@
 layout: post
 title:  "Codeforces 257C - View Angle"
 date:   2016-9-15 9:30:00 -0500
-categories: ICPC
+categories: Codeforces
 ---
 
 **Problem:** [View Angle]
