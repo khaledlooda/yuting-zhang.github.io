@@ -5,7 +5,6 @@ permalink: /about/
 ---
 <img style="float: right;" src="/assets/profile.JPG" width="250" />
 
-*Software Engineer Intern at Facebook*  
 *ACM-ICPC 2017 World Finalist*
 
 Ahoy visitors! I am Yuting Zhang, currently studying Computer Science at 
