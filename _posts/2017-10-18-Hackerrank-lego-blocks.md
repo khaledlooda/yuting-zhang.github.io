@@ -8,7 +8,7 @@ categories: Hackerrank
 
 **Problem:** [Lego Blocks](https://www.hackerrank.com/contests/codesprint-practice/challenges/lego-blocks)
 
-*Cross posted on [UIUC ICPC website](http://icpc.cs.illinois.edu/)*
+*Cross-posted on [UIUC ICPC website](http://icpc.cs.illinois.edu/)*
 
 **Solution:**
 A typical DP problem. Notice that all blocks are of height 1, and only differ
